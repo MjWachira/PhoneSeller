@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "nxIJzJ38tJwZWQPDkqCKeqguiZxHn6gHZ2G9s0MtrSM=",
+  "Source": "PhoneSeller",
+  "BasePath": "_content/PhoneSeller",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
