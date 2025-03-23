@@ -2,7 +2,7 @@ trigger:
 - main
 
 pool:
-  name: 'my-self-hosted-agent'
+  vmImage: 'windows-latest'
 
 variables:
   buildConfiguration: 'Release'
