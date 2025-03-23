@@ -1,10 +1,9 @@
 {
   "version": 2,
-  "dgSpecHash": "0rkG+K7P+Qo=",
+  "dgSpecHash": "KOzswz2E1VU=",
   "success": true,
   "projectFilePath": "C:\\Development\\PhoneSeller\\PhoneSeller.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\JohnMwangiWachira\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.2\\microsoft.aspnetcore.openapi.9.0.2.nupkg.sha512",
     "C:\\Users\\JohnMwangiWachira\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\JohnMwangiWachira\\.nuget\\packages\\microsoft.openapi\\1.6.23\\microsoft.openapi.1.6.23.nupkg.sha512",
     "C:\\Users\\JohnMwangiWachira\\.nuget\\packages\\swashbuckle.aspnetcore\\8.0.0\\swashbuckle.aspnetcore.8.0.0.nupkg.sha512",

@@ -6,7 +6,6 @@ C:\Development\PhoneSeller\bin\Debug\net9.0\PhoneSeller.deps.json
 C:\Development\PhoneSeller\bin\Debug\net9.0\PhoneSeller.runtimeconfig.json
 C:\Development\PhoneSeller\bin\Debug\net9.0\PhoneSeller.dll
 C:\Development\PhoneSeller\bin\Debug\net9.0\PhoneSeller.pdb
-C:\Development\PhoneSeller\bin\Debug\net9.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Development\PhoneSeller\bin\Debug\net9.0\Microsoft.OpenApi.dll
 C:\Development\PhoneSeller\obj\Debug\net9.0\PhoneSeller.csproj.AssemblyReference.cache
 C:\Development\PhoneSeller\obj\Debug\net9.0\PhoneSeller.GeneratedMSBuildEditorConfig.editorconfig
