@@ -1,0 +1,22 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "PhoneSeller API",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Phone": {
+      "get": {
+        "tags": [
+          "Phone"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": { }
+}

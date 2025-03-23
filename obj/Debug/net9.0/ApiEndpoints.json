@@ -1,0 +1,12 @@
+[
+  {
+    "ContainingType": "PhoneSeller.Controllers.PhoneController",
+    "Method": "GetPhones",
+    "RelativePath": "api/Phone",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
