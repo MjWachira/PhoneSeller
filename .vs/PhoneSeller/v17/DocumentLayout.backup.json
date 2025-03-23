@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Development\\PhoneSeller\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3BA0C390-D015-BB89-0390-5077B11C5661}|PhoneSeller.csproj|c:\\development\\phoneseller\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{3BA0C390-D015-BB89-0390-5077B11C5661}|PhoneSeller.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3BA0C390-D015-BB89-0390-5077B11C5661}|PhoneSeller.csproj|c:\\development\\phoneseller\\phoneseller.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{3BA0C390-D015-BB89-0390-5077B11C5661}|PhoneSeller.csproj|solutionrelative:phoneseller.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
@@ -23,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Development\\PhoneSeller\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Development\\PhoneSeller\\.gitignore*",
+              "RelativeToolTip": ".gitignore*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-03-23T17:37:53.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "PhoneSeller",
               "DocumentMoniker": "C:\\Development\\PhoneSeller\\PhoneSeller.csproj",
               "RelativeDocumentMoniker": "PhoneSeller.csproj",

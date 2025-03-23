@@ -421,6 +421,7 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
+      "Microsoft.OpenApi >= 1.6.23",
       "Swashbuckle.AspNetCore >= 8.0.0"
     ]
   },
@@ -475,6 +476,10 @@
       "net9.0": {
         "targetAlias": "net9.0",
         "dependencies": {
+          "Microsoft.OpenApi": {
+            "target": "Package",
+            "version": "[1.6.23, )"
+          },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[8.0.0, )"
