@@ -1,0 +1,55 @@
+trigger:
+- main
+
+pool:
+  name: 'my-self-hosted-agent'
+
+variables:
+  buildConfiguration: 'Release'
+  publishFolder: '$(Build.ArtifactStagingDirectory)/publish'
+
+stages:
+- stage: Build
+  displayName: 'Build Stage'
+  jobs:
+  - job: Build
+    displayName: 'Build Job'
+    steps:
+    - task: UseDotNet@2
+      inputs:
+        packageType: 'sdk'
+        version: '9.x'
+        installationPath: $(Agent.ToolsDirectory)/dotnet
+
+    - script: dotnet nuget locals all --clear
+      displayName: 'Clear NuGet Cache'
+
+    - script: dotnet clean
+      displayName: 'Clean Solution'
+
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'restore'
+        projects: '**/*.sln'
+      displayName: 'Restore NuGet Packages'
+
+    - task: VSBuild@1
+      inputs:
+        solution: '**/*.sln'
+        configuration: '$(buildConfiguration)'
+      displayName: 'Build Solution'
+
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: 'publish'
+        publishWebProjects: true
+        arguments: '--configuration $(buildConfiguration) --output $(publishFolder)'
+        zipAfterPublish: false
+      displayName: 'Publish Application'
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(publishFolder)'
+        ArtifactName: 'drop'
+        publishLocation: 'Container'
+      displayName: 'Publish Build Artifacts'
