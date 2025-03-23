@@ -21,6 +21,9 @@ stages:
         version: '9.x'
         installationPath: $(Agent.ToolsDirectory)/dotnet
 
+    - script: dotnet nuget locals all --clear
+      displayName: 'Clear NuGet Cache'
+
     - script: dotnet clean
       displayName: 'Clean Solution'
 
@@ -50,67 +53,3 @@ stages:
         ArtifactName: 'drop'
         publishLocation: 'Container'
       displayName: 'Publish Build Artifacts'
-
-- stage: Deploy_Dev
-  displayName: 'Deploy to Dev'
-  dependsOn: Build
-  jobs:
-  - job: Deploy
-    displayName: 'Deploy Job'
-    steps:
-    - task: DownloadBuildArtifacts@0
-      inputs:
-        buildType: 'current'
-        artifactName: 'drop'
-        downloadPath: '$(Pipeline.Workspace)'
-      displayName: 'Download Build Artifacts'
-
-    - script: |
-        # Add script to deploy to Dev VM (e.g., copy files, configure IIS)
-        echo "Deploying to Dev environment..."
-        $sourcePath = "$(Pipeline.Workspace)\drop"
-        $destinationPath = "\\dev-server\C$\inetpub\PhoneSeller"
-        Copy-Item -Path $sourcePath\* -Destination $destinationPath -Recurse -Force
-      displayName: 'Deploy to Dev'
-      env:
-        DEV_SERVER_USER: $(DevServerUser)
-        DEV_SERVER_PASSWORD: $(DevServerPassword)
-
-- stage: Approve_Production
-  displayName: 'Approve Production Deployment'
-  dependsOn: Deploy_Dev
-  jobs:
-  - job: WaitForApproval
-    displayName: 'Wait for Approval'
-    pool: server
-    steps:
-    - task: ManualValidation@0
-      inputs:
-        notifyUsers: 'your-email@example.com'
-        instructions: 'Please approve the deployment to production.'
-      displayName: 'Wait for Approval'
-
-- stage: Deploy_Production
-  displayName: 'Deploy to Production'
-  dependsOn: Approve_Production
-  jobs:
-  - job: Deploy
-    displayName: 'Deploy Job'
-    steps:
-    - task: DownloadBuildArtifacts@0
-      inputs:
-        buildType: 'current'
-        artifactName: 'drop'
-        downloadPath: '$(Pipeline.Workspace)'
-      displayName: 'Download Build Artifacts'
-
-    - script: |
-        # Add script to deploy to Production VM (e.g., copy files, configure IIS)
-        echo "Deploying to Production environment..."
-        $sourcePath = "$(Pipeline.Workspace)\drop"
-        $destinationPath = "\\prod-server\C$\inetpub\PhoneSeller"
-        Copy-Item -Path $sourcePath\* -Destination $destinationPath -Recurse -Force
-      displayName: 'Deploy to Production'
-      env:
-        PROD_SERVER_USER: $(ProdServerUser)
-        PROD_SERVER_PASSWORD: $(ProdServerPassword)
